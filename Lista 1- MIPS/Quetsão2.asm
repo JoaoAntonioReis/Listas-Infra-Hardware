@@ -4,13 +4,13 @@
  	result_not_perfect: .word 0
  	b: .word 0
 .text
-	la $s0, b #carrega o endereço de "b"
+	la $s0, b #carrega o endereÃ§o de "b"
 	lw $s3, b #carrega o valor de "b"
 	
-	la $s1, result_perfect_square #carrega o endereço de "result_perfect_square"
+	la $s1, result_perfect_square #carrega o endereÃ§o de "result_perfect_square"
 	lw $s4, result_perfect_square #carrega o valor de "result_perfect_square"
 	
-	la $s2, result_not_perfect #carrega o endereço de "result_not_perfect"
+	la $s2, result_not_perfect #carrega o endereÃ§o de "result_not_perfect"
 	lw $s5, result_not_perfect #carrega o valor de "result_not_perfect"
 	
 	li $v0, 5 #leitura do "a"
@@ -19,18 +19,18 @@
 	move $t2, $v0 #move o conteudo de a para o registrador $t2
 	
 	
-	move $t0, $zero #Esse será o "i" inicial = 0
+	move $t0, $zero #Esse serÃ¡ o "i" inicial = 0
 	
 	for:
-		beq $t0, 10, quadrado_imperfeito #caso chegue a 10 interações o laço é encerrado
-		addi $t0, $t0, 1 #adiciona 1 a cada interação
+		beq $t0, 10, quadrado_imperfeito #caso chegue a 10 interaÃ§Ãµes o laÃ§o Ã© encerrado
+		addi $t0, $t0, 1 #adiciona 1 a cada interaÃ§Ã£o
 		mul  $t1, $t0, $t0 #calcula o quadrado
 		
 		beq $t1, $t2, quadrado_perfeito
 		
-		j for	#retorna para a função do "for"
+		j for	#retorna para a funÃ§Ã£o do "for"
 		
-	quadrado_imperfeito: #como nenhum número corresponde ao quadrado perfeito, o valor de "perfect_not_square" é alterado para o valor de 1
+	quadrado_imperfeito: #como nenhum nÃºmero corresponde ao quadrado perfeito, o valor de "perfect_not_square" Ã© alterado para o valor de 1
 
 	
 		move $s5, $t2 
