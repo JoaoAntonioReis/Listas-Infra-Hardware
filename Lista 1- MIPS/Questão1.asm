@@ -1,7 +1,6 @@
 .data
 	
 .text
-
 	li $v0, 5 #le Valor do primeiro inteiro
 	syscall
 	
@@ -18,7 +17,6 @@
 	add $t2, $t0, $t1
 	syscall
 	menor: 
-		
 		move $t2, $t1
 		syscall
 	maior: 
